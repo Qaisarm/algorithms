@@ -2,13 +2,12 @@
 
 # 1 - Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
-<font size=5>
 - Problem:
 
 The problem here we deling with is that: 
 <br>
 You are climbing a staircase. It takes ```n``` steps to reach the top.
- </font> 
+
 
 Each time you can either climb``` 1``` or``` 2``` steps. In how many distinct ways can you climb to the top?
 
@@ -74,7 +73,7 @@ And " Memoization, in programing, is an optimization technique that makes applic
 
 # 2 -  Approach
 <!-- Describe your approach to solving the problem. -->
- My approach to solv this problem was to go to drawing board and make a theory.
+ My approach to solve this problem was to go to drawing board and make a theory.
  So, lets create a theory
 
  ![](theory1.png) 
@@ -158,4 +157,4 @@ int [] distinctWays = new int [n+1];
 ````
 <font size=5>
 i.e., if n is 10 the we are allocating 40 bytes of space and with increasing number we have to allocate more space. 
- 
+</font> 
