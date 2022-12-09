@@ -26,9 +26,14 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
 ```
  From the example we can see that if there are two stairs then number of ways to reach the top are two. i.e, climbing one step each or climbing 2 steps. 
+ <br>
+
  ![](way1.png)
 
  From example 2, if we have 3 stairs then the number of ways to reach the top are 3, i.e., first way will be climbing one step each, second way will be first climb one step and the two steps and the third way will be first climb 2 steps and then climb one step. 
+
+ <br>
+
 ![](way2.png) 
 
 The first thoughts that came to mind to solve this problem were wage, i.e, whether to use hash map or hash set or something else. 
@@ -69,6 +74,8 @@ And " Memoization, in programing, is an optimization technique that makes applic
  So, lets create a theory
 
  ![](theory1.png) 
+
+
  From the examples given, we see that if there are two stairs then there are two distinct ways to climb to the top and if there are three stairs then there are three distinct ways to go to the top. So, looking at the same pattren we can assume that if there are four stairs then there will be four distinct ways to go to the top.
 
  So, this is the theory. This can be true, or if it is not true then we have to look for other ways.
@@ -76,19 +83,38 @@ And " Memoization, in programing, is an optimization technique that makes applic
  So far we have gone from left to right to approach the problem. Let's go from right to left and see if we get an other idea to approach this problem.
 
  So, if we have four stairs and we are at the top, then the question is how many distinct ways to go on top when we are at top, so the answer will be one, as we don't move and we are already on top and the distinct way is one, i.e., do nothing and stay there.
+
+
   ![](theory2.png) 
+
+
 If we are on stair three, there is also one 
 distinct way to go to top, i.e., we take one step from third stair to fourth stair. we can not take to two steps as it will be out of bound which is not allowed. 
+
+
    ![](theory3.png) 
+
+
 So, still no enough data. Let's go to second stair and see how many distinct ways we have to go to the top. One way is we take two steps and go to the top. We can take one step and go to third stair, now thrid stair knows how many steps to take to go to the top, i.e., one way. 
 So, when we are at stair two, we have two distinct ways to go to top. The intresting point here is when we go to third stair and the third stair knows how many ways to to to the top, i.e., one way as that we have stored in memory of third stair. If we manage to get to thrid stair that means that the third stair can take over then we have two distinct ways to get to third stair and third stair has one way to get to the top, so in reality we have three distinct ways to get to the top. This is called memorization as we have stored these values in the memory. 
+   
+   
     ![](theory4.png) 
+
+
 Let's go to stair one. We have one distinct way that we take one step and go to second stair and it has two distinct ways to go to top and we can take two steps and go to third stair and it has one distinct way to go to the top. So we have three distinct ways to go to top. 
+
+
      ![](theory5.png) 
+
+
 So according to our theory the number of distinct ways to go to top from second stair are the sum of distinct ways to go to top from stair three and four, i.e., one plus one equals two ways. Similarly from stair one to stair four, the number of distinct ways are the sum of distinct ways from stair two to stair four and from stair three to stair four, i.e., two plus one equals three. 
 
 So, we can conclude that if we have four stairs then we have five distinct ways to go to top, i.e., the sum of ways from stair one to top and from second stair to top that are five and so on. as seen in figure below. 
+
+
  ![](theory6.png) 
+ 
 ![](theory7.png) 
 
 # 3 - Code
