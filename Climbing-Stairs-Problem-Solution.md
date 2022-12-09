@@ -1,7 +1,9 @@
+<font size=5>
+
 # 1 - Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
 - Problem:
-  
+
 The problem here we deling with is that:
 <br>
 You are climbing a staircase. It takes ```n``` steps to reach the top.
@@ -114,7 +116,7 @@ So, we can conclude that if we have four stairs then we have five distinct ways 
 
 
  ![](theory6.png) 
- 
+
 ![](theory7.png) 
 
 # 3 - Code
@@ -138,11 +140,21 @@ public class Solution {
  # 4 -  Complexity
 - Time complexity:
 <!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
 The time complexity is linear O(n) as we have one loop which is from 2 to n.
+
+
 - Space complexity:
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+
 The space complexity is linear O(n) as we are allocating the array 
+
+
 ```
 int [] distinctWays = new int [n+1];
 ````
+<font size=5>
 i.e., if n is 10 the we are allocating 40 bytes of space and with increasing number we have to allocate more space. 
+ 
+ </font> 
